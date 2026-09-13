@@ -1,70 +1,26 @@
 # 🧮 Python Calculator
 
-A simple **command-line calculator built using Python**.
-This project allows users to perform basic mathematical operations such as addition, subtraction, multiplication, division, and modulus.
+A simple **console-based calculator built with Python**.
+This project is designed to practice Python fundamentals such as functions, loops, conditional statements, exception handling, lists, and formatted strings.
 
-## 📌 Features
+## ✨ Features
+
+The calculator currently supports:
 
 * ➕ Addition
 * ➖ Subtraction
 * ✖️ Multiplication
 * ➗ Division
 * `%` Modulus
-* 🚫 Prevents division by zero
-* ❌ Handles invalid number inputs
-* 🔄 Runs continuously until the user chooses Exit
-* 📋 Simple and easy-to-use menu
+* 📊 Percentage calculation
+* 🔢 Power calculation
+* √ Square root
+* 📜 Calculation history
+* 🗑️ Clear calculation history
+* ❌ Input validation and error handling
+* 🔄 Continuous calculations until the user chooses to exit
 
-## 🛠️ Technologies Used
-
-* **Python 3**
-* Built-in Python functions and operators
-* No external libraries required
-
-## 📂 Project Structure
-
-```text
-Python-Calculator/
-│
-├── calculator.py
-└── README.md
-```
-
-## 🚀 How to Run
-
-### 1. Install Python
-
-Make sure Python 3 is installed on your computer.
-
-You can check your Python version using:
-
-```bash
-python --version
-```
-
-### 2. Clone or Download the Project
-
-Download the project to your computer or clone your repository.
-
-```bash
-git clone <your-repository-link>
-```
-
-### 3. Open the Project Folder
-
-```bash
-cd Python-Calculator
-```
-
-### 4. Run the Calculator
-
-```bash
-python calculator.py
-```
-
-## 💻 How to Use
-
-When you run the program, you will see a menu:
+## 📋 Menu
 
 ```text
 ====================================
@@ -75,94 +31,149 @@ When you run the program, you will see a menu:
 3. Multiplication
 4. Division
 5. Modulus
-6. Exit
+6. Percentage
+7. Power
+8. Square root
+9. History
+10. Clear history
+11. Exit
 ====================================
 ```
 
-Enter the number corresponding to the operation you want to perform.
+## 🛠️ Technologies Used
+
+* **Python 3**
+* No external libraries are required.
+
+## 🚀 How to Run
+
+### 1. Install Python
+
+Make sure Python 3 is installed on your computer.
+
+You can check by running:
+
+```bash
+python --version
+```
+
+### 2. Save the program
+
+Save the Python code as:
+
+```text
+calculator.py
+```
+
+### 3. Run the program
+
+Open your terminal in the project folder and run:
+
+```bash
+python calculator.py
+```
+
+## 📜 Calculation History
+
+The calculator stores calculations in a Python list called `history`.
 
 For example:
 
 ```text
-Enter your choice : 1
-Enter your first number : 10
-Enter your second number : 5
-The addition is : 15.0
+5.0 + 10.0 = 15.0
+20.0 × 3.0 = 60.0
+√25.0 = 5.0
 ```
 
-## ➕ Available Operations
-
-| Choice | Operation      | Example               |
-| -----: | -------------- | --------------------- |
-|      1 | Addition       | `10 + 5 = 15`         |
-|      2 | Subtraction    | `10 - 5 = 5`          |
-|      3 | Multiplication | `10 × 5 = 50`         |
-|      4 | Division       | `10 ÷ 5 = 2`          |
-|      5 | Modulus        | `10 % 3 = 1`          |
-|      6 | Exit           | Closes the calculator |
-
-## ⚠️ Error Handling
-
-The program handles some common errors.
-
-### Invalid Choice
-
-If the user enters an option other than 1–6:
+Choose:
 
 ```text
-❌Invalid choice
+9. History
 ```
 
-### Invalid Number
+to display previous calculations.
 
-If the user enters text instead of a number:
+Choose:
 
 ```text
-❌ Invalid form
+10. Clear history
 ```
 
-### Division by Zero
+to remove all stored calculations.
 
-The calculator prevents division by zero:
+> **Note:** The current version stores history only while the program is running. Closing the program will reset the history.
+
+## 🛡️ Error Handling
+
+The calculator uses `try` and `except` to handle invalid inputs.
+
+For example:
 
 ```text
+Enter your choice: abc
+❌ Invalid choice
+```
+
+It also prevents division or modulus by zero:
+
+```text
+Enter your second number: 0
 ❌ Cannot divide by zero
 ```
 
-The same protection is included for the modulus operation.
+The square root operation also checks for negative numbers:
 
-## 🎯 Learning Objectives
+```text
+Enter your number: -25
+❌ Cant find square root of negative numbers.
+```
 
-This project was created to practice fundamental Python concepts such as:
+## 🧠 Python Concepts Practiced
 
+This project helped me practice:
+
+* Variables
 * Functions
 * `while` loops
 * `if`, `elif`, and `else`
-* User input
-* Type conversion using `float()`
-* `try-except` error handling
-* Arithmetic operators
-* `break` and `continue`
-* Basic program structure
+* Lists
+* `try` and `except`
+* `continue` and `break`
+* User input with `input()`
+* Type conversion using `int()` and `float()`
+* Formatted strings using **f-strings**
+* Basic mathematical operators
+* List methods such as `.append()` and `.clear()`
+
+## 📈 Project Improvements
+
+The calculator started as a basic calculator and was gradually improved with:
+
+1. Basic arithmetic operations
+2. Error handling
+3. Percentage calculation
+4. Power calculation
+5. Square root
+6. Calculation history
+7. Clear history
+8. Better menu and user interface
 
 ## 🔮 Future Improvements
 
-Some features that could be added in future versions:
+Some features I plan to add in the future:
 
-* 🧮 Exponentiation
-* √ Square root
-* 📊 Calculation history
-* 🔢 Support for more mathematical operations
-* 🎨 Improved terminal interface
-* 🧹 Better input validation
-* 📝 Save calculation history to a file
+* 💾 Save history to a `.txt` file
+* 📂 Load previous history when the program starts
+* 🔢 Factorial
+* 🔄 Continue calculations using the previous result
+* 🕒 Add date and time to calculation history
+* 🧮 More advanced mathematical operations
+* 🎨 Improve the console interface
 
-## 👨‍💻 Author
+## 👨‍💻 About the Project
 
-**Himanshu**
+This is a beginner-level Python project created to improve my programming skills and understand how different Python concepts work together in a practical application.
 
-This project was created as a beginner-friendly Python project to practice programming fundamentals.
+---
 
-## 📄 License
-
-This project is free to use for learning and educational purposes.
+⭐ **More features will be added as I continue learning Python.**
