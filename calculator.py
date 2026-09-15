@@ -1,10 +1,11 @@
+import os
+
+
 def calculator():
-    history = []   # Stores calculation history
 
     while True:
 
         # Title
-
         print("====================================")
         print("        PYTHON CALCULATOR")
         print("====================================")
@@ -24,7 +25,6 @@ def calculator():
         print("====================================")
 
         # Choice input
-
         try:
             choice = int(input("Enter your choice: "))
         except ValueError:
@@ -32,59 +32,68 @@ def calculator():
             continue
 
         # Exit
-
         if choice == 11:
             print("Thanks for using our calculator.")
             break
 
         # History
-
         if choice == 9:
             print("\n========== CALCULATION HISTORY ==========")
 
-            if not history:
-                print("No calculations yet.")
+            if os.path.exists("history.txt"):
+                with open("history.txt", "r") as f:
+                    history = f.read()
+
+                if history:
+                    print(history)
+                else:
+                    print("No calculations yet.")
             else:
-                for calculation in history:
-                    print(calculation)
+                print("No calculations yet.")
 
             print("=========================================")
             continue
 
         # Clear History
-
         if choice == 10:
-            history.clear()
-            print("✅ Calculation history cleared.")
+            if os.path.exists("history.txt"):
+                os.remove("history.txt")
+                print("✅ History has been cleared.")
+            else:
+                print("❌ No history found.")
+
             continue
 
-        # Check valid choice 
-
+        # Square Root
         if choice == 8:
+
             try:
-                num3 = float(input("Enter your number :"))
+                num = float(input("Enter your number: "))
             except ValueError:
                 print("❌ Invalid number")
                 continue
-             
-            if num3 < 0:
-                print("❌ Cant find square root of negative numbers.")
+
+            if num < 0:
+                print("❌ Can't find square root of a negative number.")
                 continue
 
-                #Sqaure root
-                
-            result = num3 ** 0.5
-            calculation = f"√{num3} = {result}"
-            print("The square root is :", result)
-            history.append(calculation)
+            result = num ** 0.5
+            calculation = f"√{num} = {result}"
+
+            print("The square root is:", result)
+
+            # Save square root to history
+            with open("history.txt", "a") as f:
+                f.write(calculation + "\n")
+
             continue
 
-        elif choice not in [1, 2, 3, 4, 5, 6, 7]:
+        # Check valid choice
+        if choice not in [1, 2, 3, 4, 5, 6, 7]:
             print("❌ Invalid choice")
             continue
 
         # Input numbers
-
         try:
             num1 = float(input("Enter your first number: "))
             num2 = float(input("Enter your second number: "))
@@ -93,28 +102,24 @@ def calculator():
             continue
 
         # Addition
-
         if choice == 1:
             result = num1 + num2
             calculation = f"{num1} + {num2} = {result}"
             print("The addition is:", result)
 
         # Subtraction
-
         elif choice == 2:
             result = num1 - num2
             calculation = f"{num1} - {num2} = {result}"
             print("The difference is:", result)
 
         # Multiplication
-
         elif choice == 3:
             result = num1 * num2
             calculation = f"{num1} × {num2} = {result}"
             print("The multiplication is:", result)
 
         # Division
-
         elif choice == 4:
             if num2 == 0:
                 print("❌ Cannot divide by zero")
@@ -125,7 +130,6 @@ def calculator():
             print("The division is:", result)
 
         # Modulus
-
         elif choice == 5:
             if num2 == 0:
                 print("❌ Cannot divide by zero")
@@ -135,29 +139,26 @@ def calculator():
             calculation = f"{num1} % {num2} = {result}"
             print("The modulus is:", result)
 
-            #Percentage
-
-        elif choice ==6:
+        # Percentage
+        elif choice == 6:
             if num2 == 0:
                 print("❌ Cannot divide by zero")
                 continue
+
             result = (num1 / num2) * 100
-            print("The percentage is :", result)
             calculation = f"{num1} is {result}% of {num2}"
+            print("The percentage is:", result)
 
-            #Power
-
+        # Power
         elif choice == 7:
             result = num1 ** num2
-            print("The power is :", result)
             calculation = f"{num1} ** {num2} = {result}"
-            
+            print("The power is:", result)
 
-        # Add calculation to history
+        # Save calculation to history
+        with open("history.txt", "a") as f:
+            f.write(calculation + "\n")
 
-        history.append(calculation)
 
-
-# Ready to use
-
+# Run calculator
 calculator()

@@ -1,11 +1,8 @@
 # 🧮 Python Calculator
 
-A simple **console-based calculator built with Python**.
-This project is designed to practice Python fundamentals such as functions, loops, conditional statements, exception handling, lists, and formatted strings.
+A beginner-friendly **command-line calculator built with Python**. This project performs basic and advanced mathematical operations while also providing a persistent calculation history using a text file.
 
-## ✨ Features
-
-The calculator currently supports:
+## 🚀 Features
 
 * ➕ Addition
 * ➖ Subtraction
@@ -15,10 +12,12 @@ The calculator currently supports:
 * 📊 Percentage calculation
 * 🔢 Power calculation
 * √ Square root
-* 📜 Calculation history
+* 📜 View calculation history
 * 🗑️ Clear calculation history
-* ❌ Input validation and error handling
-* 🔄 Continuous calculations until the user chooses to exit
+* 💾 Save history permanently in `history.txt`
+* ❌ Input validation
+* 🛡️ Division-by-zero protection
+* 🛡️ Negative square-root protection
 
 ## 📋 Menu
 
@@ -43,137 +42,133 @@ The calculator currently supports:
 ## 🛠️ Technologies Used
 
 * **Python 3**
-* No external libraries are required.
+* File Handling
+* Exception Handling
+* `os` Module
 
-## 🚀 How to Run
+## 📚 Python Concepts Practiced
 
-### 1. Install Python
+This project helped me practice several important Python concepts:
 
-Make sure Python 3 is installed on your computer.
+* Variables
+* Data Types
+* Functions
+* `while` loops
+* `if`, `elif`, and `else`
+* Lists
+* User Input
+* Type Conversion
+* `try` / `except`
+* File Handling
+* `with open()`
+* `f-strings`
+* `break`
+* `continue`
+* Modules
+* Basic error handling
 
-You can check by running:
-
-```bash
-python --version
-```
-
-### 2. Save the program
-
-Save the Python code as:
+## 📁 Project Structure
 
 ```text
-calculator.py
+Python-Calculator/
+│
+├── calculator.py
+├── history.txt
+└── README.md
 ```
 
-### 3. Run the program
+> `history.txt` is automatically created when the calculator saves its first calculation.
 
-Open your terminal in the project folder and run:
+## ▶️ How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone YOUR-GITHUB-REPOSITORY-LINK
+```
+
+### 2. Open the project
+
+```bash
+cd Python-Calculator
+```
+
+### 3. Run the calculator
 
 ```bash
 python calculator.py
 ```
 
-## 📜 Calculation History
+## 💡 Example
 
-The calculator stores calculations in a Python list called `history`.
-
-For example:
+### Addition
 
 ```text
-5.0 + 10.0 = 15.0
-20.0 × 3.0 = 60.0
-√25.0 = 5.0
+Enter your choice: 1
+Enter your first number: 25
+Enter your second number: 10
+
+The addition is: 35.0
 ```
 
-Choose:
+### Square Root
 
 ```text
-9. History
+Enter your choice: 8
+Enter your number: 144
+
+The square root is: 12.0
 ```
 
-to display previous calculations.
-
-Choose:
+### History
 
 ```text
-10. Clear history
+========== CALCULATION HISTORY ==========
+25.0 + 10.0 = 35.0
+√144.0 = 12.0
+5.0 ** 2.0 = 25.0
+=========================================
 ```
 
-to remove all stored calculations.
+## 🎯 Project Goal
 
-> **Note:** The current version stores history only while the program is running. Closing the program will reset the history.
+The goal of this project was to strengthen my Python fundamentals by building a practical application instead of only learning syntax and theory.
 
-## 🛡️ Error Handling
-
-The calculator uses `try` and `except` to handle invalid inputs.
-
-For example:
-
-```text
-Enter your choice: abc
-❌ Invalid choice
-```
-
-It also prevents division or modulus by zero:
-
-```text
-Enter your second number: 0
-❌ Cannot divide by zero
-```
-
-The square root operation also checks for negative numbers:
-
-```text
-Enter your number: -25
-❌ Cant find square root of negative numbers.
-```
-
-## 🧠 Python Concepts Practiced
-
-This project helped me practice:
-
-* Variables
-* Functions
-* `while` loops
-* `if`, `elif`, and `else`
-* Lists
-* `try` and `except`
-* `continue` and `break`
-* User input with `input()`
-* Type conversion using `int()` and `float()`
-* Formatted strings using **f-strings**
-* Basic mathematical operators
-* List methods such as `.append()` and `.clear()`
-
-## 📈 Project Improvements
-
-The calculator started as a basic calculator and was gradually improved with:
-
-1. Basic arithmetic operations
-2. Error handling
-3. Percentage calculation
-4. Power calculation
-5. Square root
-6. Calculation history
-7. Clear history
-8. Better menu and user interface
+I started with basic arithmetic operations and gradually added features such as error handling, file-based history, square roots, percentages, and history management.
 
 ## 🔮 Future Improvements
 
 Some features I plan to add in the future:
 
-* 💾 Save history to a `.txt` file
-* 📂 Load previous history when the program starts
-* 🔢 Factorial
-* 🔄 Continue calculations using the previous result
-* 🕒 Add date and time to calculation history
-* 🧮 More advanced mathematical operations
-* 🎨 Improve the console interface
+* 🔍 Search calculation history
+* 🧹 Delete individual history entries
+* 📅 Add date and time to calculations
+* 📊 Calculation statistics
+* 🔢 More mathematical operations
+* 🎨 Improve the command-line interface
+* 🧩 Split operations into separate functions
+* 📝 Export history to CSV
+* 🧪 Add automated tests
+* 🖥️ Create a graphical user interface (GUI)
 
-## 👨‍💻 About the Project
+## 📈 What I Learned
 
-This is a beginner-level Python project created to improve my programming skills and understand how different Python concepts work together in a practical application.
+While building this project, I learned how to:
+
+* Build a program using functions and loops
+* Handle invalid user input
+* Prevent common mathematical errors
+* Read from and write to files
+* Store information permanently
+* Organize a larger Python program
+* Debug and improve code step by step
+
+## 👨‍💻 Author
+
+**Himanshu**
+
+This project was created as part of my journey to improve my Python programming and problem-solving skills.
 
 ---
 
-⭐ **More features will be added as I continue learning Python.**
+⭐ If you found this project useful, consider giving the repository a star!
